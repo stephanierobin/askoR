@@ -749,6 +749,8 @@ GEnorm <- function(filtered_GE, asko_list, parameters){
   
   # Normalization counts
   norm_GE<-calcNormFactors(filtered_GE, method = parameters$normal_method)
+  cat("\nnormalization factors:\n")
+  write.table(norm_GE$samples, file="normalization.txt", col.names=T, row.names = T, quote=F,sep='\t')
   
   # boxplot log2(cpm) values after normalization 
   #----------------------------------------------------
